@@ -1,11 +1,11 @@
-//Â  Created by Frank M. Carrano and Timothy M. Henry.
-//Â  Copyright (c) 2017 Pearson Education, Hoboken, New Jersey.
+//  Created by Frank M. Carrano and Timothy M. Henry.
+//  Copyright (c) 2017 Pearson Education, Hoboken, New Jersey.
 
 // Listing 12-1
 
 /** Interface for the ADT sorted list
  @file SortedListInterface.h */
-
+ 
 #ifndef SORTED_LIST_INTERFACE_
 #define SORTED_LIST_INTERFACE_
 
@@ -19,7 +19,7 @@ public:
     @post  newEntry is in the list, and the list is sorted.
     @param newEntry  The entry to insert into the sorted list. */
    virtual bool insertSorted(const ItemType& newEntry) = 0;
-
+   
    /** Removes the first or only occurrence of the given entry from this
        sorted list.
     @pre  None.
@@ -30,7 +30,7 @@ public:
     @param anEntry  The entry to remove.
     @return  True if removal is successful, or false if not. */
    virtual bool removeSorted(const ItemType& anEntry) = 0;
-
+   
    /** Gets the position of the first or only occurrence of the given
        entry in this sorted list. In case the entry is not in the list,
        determines where it should be if it were added to the list.
@@ -42,25 +42,25 @@ public:
        sorted list, or the position where the entry would occur, but as a
        negative integer. */
    virtual int getPosition(const ItemType& anEntry) const = 0;
-
+   
    // The following methods are the same as those given in ListInterface
    // in Listing 8-1 of Chapter 8 and are completely specified there.
-
+   
    /** Sees whether this list is empty. */
    virtual bool isEmpty() const = 0;
-
+   
    /** Gets the current number of entries in this list. */
    virtual int getLength() const = 0;
-
+   
    /** Removes the entry at a given position from this list. */
    virtual bool remove(int position) = 0;
-
+   
    /** Removes all entries from this list. */
    virtual void clear() = 0;
-
+   
    /** Gets the entry at the given position in this list. */
    virtual ItemType getEntry(int position) const = 0;
-
+   
    /** Destroys object and frees memory allocated by object. */
    virtual ~SortedListInterface() { }
 }; // end SortedListInterface
