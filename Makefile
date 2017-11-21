@@ -1,8 +1,8 @@
-output: LinkedSortedList-driver.o
-	g++ LinkedSortedList-driver.o -o run
+output: sortedlist.o
+	g++ sortedlist.o -o run
 
-LinkedSortedList-driver.o: LinkedSortedList-driver.cpp
-	g++ -c -std=c++14 LinkedSortedList-driver.cpp
+sortedlist.o: sortedlist.cpp
+	g++ -c -std=c++14 sortedlist.cpp
 
 clean:
 	rm *.o run
