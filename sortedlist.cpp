@@ -1,7 +1,7 @@
 // Author:   Chad Palmer
 // Semester: Fall 2017
 // Class:    Data Structures (COSC 2436-004)
-// Lab: 4
+// Lab: 5
 
 #include<iostream>
 #include<memory>
