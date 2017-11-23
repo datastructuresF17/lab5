@@ -8,44 +8,46 @@
 #include<cstdlib>       // srand and rand
 #include<ctime>         // time "seed"
 #include "LinkedSortedList.h"
-
 using namespace std;
 
+// Function prototypes
 int fillList(shared_ptr<SortedListInterface<int>> listPtr);
 void displayList(shared_ptr<SortedListInterface<int>> listPtr);
 
+// Driver program
 int main() {
 
     srand(time(0));
     shared_ptr<SortedListInterface<int>> listPtr;
     listPtr = make_shared<LinkedSortedList<int>>();
 
-    int lastEntry = fillList(listPtr);
+    int lastEntry = fillList(listPtr);              // create list, return last entry
 
-    displayList(listPtr);
+    displayList(listPtr);                           // display the list
 
-    cout << "Last number added: ";
-    cout << listPtr->getEntry(lastEntry) << " at position ";
-    cout << lastEntry << endl;
+    cout << "Last number added: "
+         << listPtr->getEntry(lastEntry)
+         << " at position " << lastEntry << endl;
 
     cout << "Deleting last entry added to list... ";
-    listPtr->remove(lastEntry);
+    listPtr->remove(lastEntry);                     // delete last entry
     cout << "done." << endl << endl;
 
-    displayList(listPtr);
+    displayList(listPtr);                           // display list again
 
     return 0;
 }
 
+// Function definitions
 void displayList(shared_ptr<SortedListInterface<int>> listPtr)
 {
-	cout << "The sorted list contains " << endl;
-   for (int pos = 1; pos <= listPtr->getLength(); pos++)
+	cout << "Contents of sorted list: " << endl;
+   for (int i = 1; i <= listPtr->getLength(); i++)
    {
-      cout << listPtr->getEntry(pos) << ", ";
-   } // end for
+      cout << listPtr->getEntry(i) << "-";
+   }
 	cout << endl << endl;
-}  // end displayList
+}
 
 int fillList(shared_ptr<SortedListInterface<int>> listPtr)
 {
